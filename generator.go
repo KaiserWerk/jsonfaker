@@ -20,7 +20,7 @@ func New(opts ...Option) *Generator {
 	return g
 }
 
-// Hauptfunktion: Schema -> JSON bytes
+// GenerateJSON accepts a JSON schema as byte slice and returns generated partially pseudo-random JSON data as byte slice.
 func (g *Generator) GenerateJSON(schema []byte) ([]byte, error) {
 	var s map[string]any
 
@@ -33,7 +33,7 @@ func (g *Generator) GenerateJSON(schema []byte) ([]byte, error) {
 	return json.MarshalIndent(data, "", "  ")
 }
 
-// Alternativ: direkt Go-Objekt
+// Generate accepts a JSON schema as a map and returns generated partially pseudo-random Go object.
 func (g *Generator) Generate(schema map[string]any) any {
 	return g.generate("", schema)
 }
