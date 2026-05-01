@@ -4,8 +4,6 @@
 
 It is designed for simple to moderately complex schemas, such as product data, forms, or API payloads, and produces valid, realistic-looking JSON structures without external dependencies.
 
----
-
 ## Features
 
 * Generates JSON from JSON Schema (`type`, `properties`, `items`)
@@ -25,8 +23,6 @@ It is designed for simple to moderately complex schemas, such as product data, f
 go get github.com/KaiserWerk/jsonfaker
 ```
 
----
-
 ## Usage
 
 ```go
@@ -40,8 +36,6 @@ if err != nil {
 fmt.Println(string(result))
 ```
 
----
-
 ## Supported Data Types
 
 | JSON Schema Type | Support               |
@@ -52,8 +46,6 @@ fmt.Println(string(result))
 | `number`         | (random float64)   |
 | `integer`        | (random int)       |
 | `boolean`        | (random)           |
-
----
 
 ## Supported Schema Features
 
@@ -66,8 +58,6 @@ fmt.Println(string(result))
 | `maximum`    | yes                 |
 | `format`     | yes (partial)       |
 
----
-
 ## Supported String Formats
 
 | Format      | Example                                    |
@@ -77,7 +67,6 @@ fmt.Println(string(result))
 | `date`      | 2026-01-02                                  |
 | `date-time` | 2026-01-02T15:04:05Z                        |
 
----
 
 ## Random Data And Determinism
 
@@ -90,8 +79,6 @@ gen := jsonfaker.New(
     jsonfaker.WithSeed(42),
 )
 ```
-
----
 
 ## Customization
 
@@ -113,12 +100,3 @@ This package is intentionally simple and does **not** support:
 * `oneOf`, `anyOf`, `allOf`
 * complex validation rules
 * the full JSON Schema specification
-
-## Goal
-
-Quick generation of plausible sample data for:
-
-* API tests
-* mocking
-* UI development
-* prototyping
